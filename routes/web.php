@@ -12,3 +12,4 @@
 */
 
 Route::resource('/', 'HomeController');
+Route::resource('/register', 'AuthController');
