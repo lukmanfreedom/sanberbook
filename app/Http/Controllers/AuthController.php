@@ -12,8 +12,16 @@ class AuthController extends Controller
     }
 
     public function store(Request $req) {
-        $data = $req->all();
+        $data = $req->except('_token');
 
-        return redirect()->route('welcome', ['data' => $data]);
+        if(!isset($data['firstname'])) {
+            $data['firstname'] = "John";
+        }
+
+        if(!isset($data['lastname'])) {
+            $data['lastname'] = "Doe";
+        }
+
+        return redirect()->route('welcome', ["data" => $data]);
     }
 }

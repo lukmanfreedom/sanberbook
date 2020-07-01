@@ -13,3 +13,7 @@
 
 Route::resource('/', 'HomeController');
 Route::resource('/register', 'AuthController');
+
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
