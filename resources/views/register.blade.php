@@ -10,7 +10,7 @@
 
         <h3>Sign Up Form</h3>
 
-        <form action="welcome.html">
+        {{Form::open(array('action' => 'AuthController@store')) }}
             <p>First Name:</p>
             <!-- <label for="firstname">First name:</label> -->
             <input type="text" id="firstname" name="firstname">
@@ -55,6 +55,6 @@
             <br>
 
             <input type="submit" value="Submit">
-        </form>
+        {{Form::close() }}
     </body>
 </html>
