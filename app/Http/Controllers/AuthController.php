@@ -10,4 +10,10 @@ class AuthController extends Controller
     {
         return view('register');
     }
+
+    public function store(Request $req) {
+        $data = $req->all();
+
+        return redirect()->route('welcome', ['data' => $data]);
+    }
 }
